@@ -49,11 +49,10 @@ def deleteFiles(name):
                 if custom in i and i != 'Delete-Virus.py':
                     os.remove(i)
                     print(Fore.LIGHTRED_EX + "\n File Deleted Successfully.\n" + Style.RESET_ALL)
-                    
-                    END()
-        
+                    #END()
+                
+                
             print(Fore.RED + '\n File doesn''t found. \n')
-            
             END()
             
         else:
