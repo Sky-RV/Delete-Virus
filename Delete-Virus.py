@@ -5,6 +5,20 @@ import time
 from colorama import Fore, Style, init
 from datetime import datetime, timedelta
 
+############################## DELETE ALL FILE ##############################
+
+def deleteAll():
+    
+    os.system('cls')
+    
+    time.sleep(0.5)
+    
+    for i in os.listdir():
+        if i != 'Delete-Virus.py' and i != '.git':
+            os.remove(i)
+            print(Fore.LIGHTRED_EX + "\n File Deleted Successfully.\n" + Style.RESET_ALL)
+    END()
+
 ############################## DELETE FILE ##############################
 
 def deleteFiles(name):
@@ -99,7 +113,7 @@ def main():
     elif answer == '5':
         deleteFiles(name=NULL)
     elif answer == '6':
-        pass
+        deleteAll()
     else:
         pass
 
