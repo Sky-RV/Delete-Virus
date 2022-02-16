@@ -7,17 +7,29 @@ from datetime import datetime, timedelta
 
 ############################## DELETE ALL FILE ##############################
 
-def deleteAll():
+def deleteAll(sd):
     
-    os.system('cls')
+    if sd == NULL:
+        os.system('cls')
     
-    time.sleep(0.5)
+        time.sleep(0.5)
     
-    for i in os.listdir():
-        if i != 'Delete-Virus.py' and i != '.git':
-            os.remove(i)
+        for i in os.listdir():
+            if i != 'Delete-Virus.py' and i != '.git' and i != '.pyc': # .pyc not self Destruction
+                os.remove(i)
             print(Fore.LIGHTRED_EX + "\n File Deleted Successfully.\n" + Style.RESET_ALL)
-    END()
+        END()
+        
+    else:
+        os.system('cls')
+    
+        time.sleep(0.5)
+    
+        for i in os.listdir():
+            if i != 'Delete-Virus.py' and i != '.git': #with self Destruction
+                os.remove(i)
+            print(Fore.LIGHTRED_EX + "\n File Deleted Successfully.\n" + Style.RESET_ALL)
+        END()
 
 ############################## DELETE FILE ##############################
 
@@ -96,7 +108,8 @@ def main():
         Fore.RED + ' [3] ' + Style.RESET_ALL + 'Detele .mp3 Files\n' +
         Fore.RED + ' [4] ' + Style.RESET_ALL + 'Detele .pdf Files\n' +
         Fore.RED + ' [5] ' + Style.RESET_ALL + 'Detele Custom Files\n' +
-        Fore.RED + ' [6] ' + Style.RESET_ALL + 'Detele All Files\n\n' +
+        Fore.RED + ' [6] ' + Style.RESET_ALL + 'Detele All Files\n' +
+        Fore.RED + ' [7] ' + Style.RESET_ALL + 'Detele All Files and Self Destruction\n\n' +
         Fore.LIGHTBLACK_EX + " Press any key to exit...\n"
     )
 
@@ -113,7 +126,9 @@ def main():
     elif answer == '5':
         deleteFiles(name=NULL)
     elif answer == '6':
-        deleteAll()
+        deleteAll(sd=NULL)
+    elif answer == '7':
+        deleteAll('self-destruction')
     else:
         pass
 
